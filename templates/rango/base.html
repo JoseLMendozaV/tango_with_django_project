@@ -11,9 +11,15 @@
                 How to Tango with Django!
             {% endblock %}
         </ttitle>
+
     </head>
 
     <body>
+        {% if user.is_authenticated %}
+            howdy {{ user.username }}
+        {% else %}
+            hey there partner!
+        {% endif %}
         <div>
         {% block body_block %}
         {% endblock %}
